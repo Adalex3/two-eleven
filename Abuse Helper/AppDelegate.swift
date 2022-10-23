@@ -79,3 +79,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension UIViewController {
+    
+    func delay(_ seconds: Double, completion: @escaping () -> ()) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            completion()
+        }
+    }
+    
+    
+}
+
+extension UIView {
+    
+    public func makeInvisible() {
+        self.alpha = 0
+    }
+    public func makeVisible() {
+        self.alpha = 1
+    }
+    
+}
